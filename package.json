@@ -2,7 +2,9 @@
   "name": "@eretaillabs-frontend-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve landing"
+  },
   "private": true,
   "dependencies": {
     "@nx/next": "17.1.3",

@@ -1,7 +1,7 @@
 {
-  "name": "eretaillabs-frontend-monorepo",
+  "name": "landing",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/eretaillabs-frontend-monorepo",
+  "sourceRoot": "apps/landing",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,11 +9,11 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/eretaillabs-frontend-monorepo"
+        "outputPath": "dist/apps/landing"
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/eretaillabs-frontend-monorepo"
+          "outputPath": "apps/landing"
         },
         "production": {}
       }
@@ -22,16 +22,16 @@
       "executor": "@nx/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "eretaillabs-frontend-monorepo:build",
+        "buildTarget": "landing:build",
         "dev": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "eretaillabs-frontend-monorepo:build:development",
+          "buildTarget": "landing:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "eretaillabs-frontend-monorepo:build:production",
+          "buildTarget": "landing:build:production",
           "dev": false
         }
       }
@@ -39,14 +39,14 @@
     "export": {
       "executor": "@nx/next:export",
       "options": {
-        "buildTarget": "eretaillabs-frontend-monorepo:build:production"
+        "buildTarget": "landing:build:production"
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/eretaillabs-frontend-monorepo/jest.config.ts"
+        "jestConfig": "apps/landing/jest.config.ts"
       }
     },
     "lint": {
@@ -54,7 +54,7 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/eretaillabs-frontend-monorepo/**/*.{ts,tsx,js,jsx}"
+          "apps/landing/**/*.{ts,tsx,js,jsx}"
         ]
       }
     }
